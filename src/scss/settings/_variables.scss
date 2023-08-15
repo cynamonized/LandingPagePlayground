@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap");
+
+:root {
+  --color-main-blue: #1f2f98;
+  --color-main-pink: #ee4392;
+  --color-main-blue-light: #787ff6;
+  --color-greys-light-1: #e9e9e9;
+  --color-greys-light-2: #dbdbdb;
+  --color-greys-mid-1: #d2d2d2;
+  --color-main-text: #051a2d;
+}
+
+// Container
+
+$container-width: 1300px;
+$container-width-small-desktop: 1100px;
+$container-width-smallest-desktop: 860px;
+
+// Fonts
+$font-poppins: "Poppins", sans-serif;
+$font-varela-round: "Varela Round", sans-serif;
+$font-material-icons: "Material Icons";
+
+// Colors - main
+$color-main-pink: #ee4392;
+$color-main-pink-light: #ff9dda;
+$color-main-pink-dark: #aa336b;
+
+$color-main-blue: #1f2f98;
+$color-main-blue-light: #787ff6;
+
+$color-main-white: #ffffff;
+$color-main-text: #051a2d;
+
+//Colors - Secondary
+$color-sec-blue: #004e99;
+$color-sec-blue-light: #438bd3;
+
+$color-sec-greenish: #27bebe;
+$color-sec-greenish-light: #4adede;
+
+$color-sec-lightblue: #1ca7ec;
+$color-sec-lightblue-light: #7bd5f5;
+
+$color-sec-angry-red: #d20404;
+
+//Colors - Greys
+$color-greys-light-1: #e9e9e9;
+$color-greys-light-2: #dbdbdb;
+$color-greys-mid-1: #d2d2d2;
+$color-greys-mid-2: #bbbbbb;
+$color-greys-dark-1: #a4a3a3;
+$color-greys-dark-2: #5d5d5d;
+
+// Other
+$border-radius: 30px;
+$margin-inside: 30px;

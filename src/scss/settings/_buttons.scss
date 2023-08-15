@@ -1,0 +1,44 @@
+@import "src/scss/settings/_variables";
+@import "src/scss/settings/_mixins";
+
+.main-button {
+  font-family: $font-poppins;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 400;
+  background-color: $color-main-pink;
+  color: $color-main-white;
+  padding: 12px 40px;
+  border-radius: 26px;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-main-pink-dark;
+  }
+}
+
+.secondary-button {
+  background-color: $color-main-white;
+  border: 1px solid $color-main-pink;
+  color: $color-main-pink;
+
+  &:hover {
+    background-color: $color-main-white;
+    border: 1px solid $color-main-pink-dark;
+    color: $color-main-pink-dark;
+  }
+}
+
+.tertiary-button {
+  background-color: $color-main-blue;
+
+  &:hover {
+    background-color: $color-main-text;
+  }
+}
+
+.wide-buttons {
+  padding: 12px 80px;
+}

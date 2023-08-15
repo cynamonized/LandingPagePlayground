@@ -1,0 +1,55 @@
+.form-select {
+  border: 2px solid $color-main-blue;
+  padding: 14px 22px;
+  border-radius: $border-radius;
+}
+
+.white-form {
+  font-family: $font-poppins;
+  color: $color-main-white;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: $color-main-blue;
+  border: 2px solid $color-main-white;
+  width: 100%;
+  transition: 0.2s;
+  font-size: 1rem;
+
+  &:focus {
+    border: 2px solid $color-main-white;
+    background-color: $color-main-blue-light;
+    outline: white;
+  }
+  &::placeholder {
+    color: $color-main-white;
+  }
+}
+
+.form-header {
+  @include fonts(1rem, 400, $color-greys-dark-1);
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-write {
+  width: 100%;
+  font-family: $font-poppins;
+  margin-bottom: 40px;
+  border: 2px solid $color-main-blue;
+  border-radius: $border-radius;
+  padding: 12px 20px;
+  color: $color-main-text;
+  @include fonts(1.125rem, 400, $color-main-blue);
+
+  &::placeholder {
+    @include fonts(1.125rem, 400, $color-greys-mid-2);
+  }
+}
+
+.form-write--long-form {
+  margin-bottom: 25px;
+}
+
+input {
+  outline: none;
+}
