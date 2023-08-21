@@ -12,7 +12,7 @@ export const CircleHero = () => {
         <div className="container">
           <div className="nav__left-column">
             <p className="left-column__logo">
-              Circle <span>Dracula</span>
+              Circle <span>Testing</span>
             </p>
           </div>
 
@@ -63,10 +63,15 @@ const ImageCircle = () => {
   const parallaxController = useParallaxController();
 
   return (
-    <img
-      src="../../images/CircleMain.jpg"
+    // <img
+    //   src="../../images/CircleMain.jpg"
+    //   onLoad={() => parallaxController.update()}
+    //   className="image-img-object"
+    // />
+
+    <div
+      className="image-container__main-image"
       onLoad={() => parallaxController.update()}
-      className="image-img-object"
-    />
+    ></div>
   );
 };
