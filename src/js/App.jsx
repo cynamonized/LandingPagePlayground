@@ -19,6 +19,7 @@ function App() {
         secondName={"Testing"}
         menuList={menuElements}
         circlePath={"/images/CircleMain.jpg"}
+        mainColor={"#ffc400"}
       />
     </>
   );

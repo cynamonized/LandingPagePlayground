@@ -35,15 +35,15 @@ html {
 
           font-size: 2rem;
           padding: 20px;
-
-          span {
-            color: rgb(255, 196, 0);
-          }
         }
       }
 
       .nav__right-column {
         color: white;
+
+        a {
+          color: white;
+        }
 
         .right-column__menu-list {
           @include flex(center, center);
@@ -52,7 +52,7 @@ html {
             cursor: pointer;
 
             &:hover {
-              color: rgb(148, 116, 9);
+              color: rgb(124, 124, 124);
             }
           }
         }

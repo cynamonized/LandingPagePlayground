@@ -12,6 +12,7 @@ export const CircleHero = ({
   firstName,
   secondName,
   circlePath,
+  mainColor,
 }) => {
   return (
     <ParallaxProvider>
@@ -20,7 +21,8 @@ export const CircleHero = ({
           <div className="container">
             <div className="nav__left-column">
               <p className="left-column__logo">
-                {`${firstName}`} <span>{`${secondName}`}</span>
+                {`${firstName}`}{" "}
+                <span style={{ color: mainColor }}>{`${secondName}`}</span>
               </p>
             </div>
 
