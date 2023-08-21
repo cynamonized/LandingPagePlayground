@@ -1,16 +1,25 @@
 import { useState } from "react";
 import "../scss/main.scss";
 import { CircleHero } from "./Components/CircleHero";
-import { ParallaxProvider } from "react-scroll-parallax";
+
+const menuElements = [
+  { name: "Contact", link: "#" },
+  { name: "Prices", link: "#" },
+  { name: "About us", link: "#" },
+  { name: "Hiring", link: "#" },
+  { name: "More", link: "#" },
+];
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <ParallaxProvider>
-        <CircleHero />
-      </ParallaxProvider>
+      <CircleHero
+        selfRotating={false}
+        firstName={"Circle"}
+        secondName={"Testing"}
+        menuList={menuElements}
+        circlePath={"/images/CircleMain.jpg"}
+      />
     </>
   );
 }
