@@ -20,6 +20,8 @@ function App() {
         menuList={menuElements}
         circlePath={"/images/CircleMain.jpg"}
         mainColor={"#ffc400"}
+        title={"Lorem ipsum dolor amet"}
+        subtitle={"Lorem ipsum placeholder dolor amet"}
       />
     </>
   );
