@@ -75,7 +75,7 @@ export const SelfRotatingCircle = ({ circlePath }) => {
   );
 };
 
-const ParallaxCircle = ({ circlePath }) => {
+export const ParallaxCircle = ({ circlePath }) => {
   const { ref } = useParallax({ rotate: [0, 160] });
   return (
     <div className="image-container" ref={ref}>
@@ -84,12 +84,11 @@ const ParallaxCircle = ({ circlePath }) => {
   );
 };
 
-const ImageCircle = ({ circlePath }) => {
+export const ImageCircle = ({ circlePath }) => {
   const parallaxController = useParallaxController();
   return (
     <img
       src={circlePath}
-      // src="/images/CircleMain.jpg"
       onLoad={() => parallaxController.update()}
       className="image-img-object"
     />

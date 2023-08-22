@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../scss/main.scss";
 import { CircleHero } from "./Components/CircleHero";
+import { CircleMockup } from "./Components/CircleMockup";
 
 const menuElements = [
   { name: "Contact", link: "#" },
@@ -23,6 +24,8 @@ function App() {
         title={"Lorem ipsum dolor amet"}
         subtitle={"Lorem ipsum placeholder dolor amet"}
       />
+
+      <CircleMockup circlePath={"/images/CircleMainMobile.png"} />
     </>
   );
 }

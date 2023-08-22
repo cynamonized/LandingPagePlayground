@@ -1,0 +1,139 @@
+@import "src/scss/settings/_reset";
+@import "src/scss/settings/_variables";
+@import "src/scss/settings/_mixins";
+@import "src/scss/settings/_buttons";
+
+html {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  height: 300vh;
+}
+
+.mockup-container {
+  //   background-color: white;
+  background-color: $color-main-dark;
+  height: 100vh;
+  width: 100wh;
+
+  @include flex(center, center);
+
+  .container__iphone {
+    // background-color: blueviolet;
+
+    border-radius: 55px;
+    width: 400px;
+    height: 800px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 800/400;
+      background-image: url("../../images/iphonmockup.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 1;
+      top: 0;
+    }
+
+    @include flex(center, center);
+
+    .iphone__body {
+      width: 92%;
+      height: 97%;
+      aspect-ratio: 2/1;
+      background-color: $color-main-dark;
+      border-radius: 44px;
+      //   opacity: 0.5;
+      overflow: scroll;
+      z-index: 5;
+      position: relative;
+      .iphone__top-placeholder,
+      .iphone__bottom-placeholder {
+        width: 100%;
+        z-index: 5;
+        .top-placeholder__main-block,
+        .bottom-placeholder__main-block {
+          width: 100%;
+          @include flex(flex-start, center);
+          flex-direction: column;
+        }
+      }
+
+      .main-block__row {
+        margin: 30px 0;
+        width: 80%;
+        height: 150px;
+        background-color: rgb(18, 2, 43);
+        // border: 1px solid white;
+      }
+
+      .iphone__circle-section {
+        margin: 50px 0;
+        width: 100%;
+        height: 700px;
+        background-color: $color-main-dark;
+        @include flex(center, center);
+        flex-direction: column;
+        gap: 30px;
+        position: relative;
+
+        .circle-section__circle-mobile-container {
+          position: absolute;
+          @include flex(center, center);
+          //   overflow: hidden;
+          height: 100%;
+          //   background-color: rebeccapurple;
+          .circle-mobile-container__image {
+            width: 300%;
+            aspect-ratio: 1920 / 1280;
+          }
+        }
+
+        .circle-section__content {
+          z-index: 2;
+          font-family: $font-poppins-circle;
+          @include flex(center, center);
+          flex-direction: column;
+          .content__title {
+            font-weight: 600;
+            line-height: 58px;
+            font-size: 48px;
+            color: white;
+            text-align: center;
+            text-shadow: #000000 1px 2px 3px;
+          }
+
+          .content__subtitle {
+            margin: 20px 0;
+            font-size: 26px;
+            color: white;
+            text-align: center;
+            text-shadow: #000000 1px 2px 3px;
+          }
+
+          .content__CTA {
+            text-align: center;
+            margin: 60px auto;
+            width: 220px;
+            padding: 20px;
+            font-size: 20px;
+            color: white;
+            background-color: #cc0000;
+            margin-bottom: 100px;
+          }
+
+          .content__logo {
+            width: 70%;
+            margin: 0 auto;
+            margin-top: auto;
+          }
+        }
+      }
+    }
+  }
+}
