@@ -8,6 +8,9 @@ import {
 } from "react-scroll-parallax";
 import "../../scss/Components/circleHero.scss";
 import { ParallaxCircle, ImageCircle } from "./CircleHero";
+import CircleIMG from "/images/CircleMainMobile.png";
+import BLogo from "/images/logo.svg";
+import iPhoneMockup from "/images/iphonmockup.svg";
 
 export const CircleMockup = ({ circlePath }) => {
   const [scrollElement, setScrollElement] = useState(null);
@@ -20,6 +23,7 @@ export const CircleMockup = ({ circlePath }) => {
   return (
     <div className="mockup-container">
       <div className="container__iphone">
+        <img src={iPhoneMockup} className="iphone__image" />
         <div className="iphone__body" ref={ref}>
           <ParallaxProvider scrollContainer={scrollElement}>
             <div className="iphone__top-placeholder">
@@ -39,7 +43,7 @@ export const CircleMockup = ({ circlePath }) => {
                 <h4 className="content__subtitle">This a subtitle</h4>
                 <p className="content__CTA">LEARN MORE</p>
 
-                <img src="../../images/logo.svg" className="content__logo" />
+                <img src={BLogo} className="content__logo" />
               </div>
             </div>
             <div className="iphone__bottom-placeholder">
@@ -73,7 +77,8 @@ const ParallaxPhoneCircle = ({ circlePath }) => {
 
   return (
     <img
-      src={circlePath}
+      // src={circlePath}
+      src={CircleIMG}
       onLoad={() => parallaxController.update()}
       className="circle-mobile-container__image"
     />
