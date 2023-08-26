@@ -1,0 +1,142 @@
+.circle-animation-container {
+  background-image: url("/images/Careers_middle_1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 100%;
+  aspect-ratio: 1920/570;
+  animation-delay: 0.3s;
+  animation: image-zoom 1.2s ease-in-out;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+@keyframes image-zoom {
+  0% {
+    background-size: 190%;
+  }
+
+  100% {
+    background-size: 100%;
+  }
+}
+
+.circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Variables to steer the animation */
+
+:root {
+  --circles-animation-delay-start: 0.5s;
+  --circles-animation-delay-interval: 0.3s;
+
+  --circle1-animation-time: 1.5s;
+  --circle2-animation-time: 1.5s;
+  --circle3-animation-time: 1.5s;
+
+  --circle1-timing-function: ease-in-out;
+  --circle2-timing-function: ease-in-out;
+  --circle3-timing-function: ease-in-out;
+}
+
+/* Circles */
+.reverse-circle {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.reverse-circle1 {
+  width: 68.3%;
+  animation: pulse-reverse-circle-1 var(--circle1-animation-time)
+    var(--circle1-timing-function);
+  animation-fill-mode: forwards;
+  animation-delay: var(--circles-animation-delay-start);
+  border: 1px solid white;
+  opacity: 0;
+}
+
+@keyframes pulse-reverse-circle-1 {
+  0% {
+    transform: scale(0.17);
+    opacity: 0;
+    border: 1px solid white;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+    border: 14px solid white;
+  }
+}
+
+.reverse-circle2 {
+  width: 55%;
+  animation: pulse-reverse-circle-2 var(--circle2-animation-time)
+    var(--circle2-timing-function);
+  animation-fill-mode: forwards;
+  animation-delay: calc(
+    var(--circles-animation-delay-start) +
+      var(--circles-animation-delay-interval)
+  );
+  border: 6px solid white;
+  opacity: 0;
+}
+
+@keyframes pulse-reverse-circle-2 {
+  0% {
+    transform: scale(0.17);
+    opacity: 0;
+    border: 1px solid white;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+    border: 6px solid white;
+  }
+}
+
+.reverse-circle3 {
+  width: 41%;
+  animation: pulse-reverse-circle-3 var(--circle3-animation-time)
+    var(--circle3-timing-function);
+  animation-fill-mode: forwards;
+  animation-delay: calc(
+    var(--circles-animation-delay-start) +
+      (var(--circles-animation-delay-interval) * 2)
+  );
+  border: 2px solid white;
+  opacity: 0;
+}
+
+@keyframes pulse-reverse-circle-3 {
+  0% {
+    transform: scale(0.28);
+    opacity: 0;
+    border: 1px solid white;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+    border: 2px solid white;
+  }
+}

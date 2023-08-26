@@ -12,7 +12,12 @@ import CircleIMG from "/images/CircleMainMobile.png";
 import BLogo from "/images/logo.svg";
 import iPhoneMockup from "/images/iphonmockup.svg";
 
-export const CircleMockup = ({ circlePath }) => {
+export const CircleMockup = ({
+  circlePath,
+  mainTitle,
+  subTitle,
+  mainColor,
+}) => {
   const [scrollElement, setScrollElement] = useState(null);
   const ref = useRef(null);
 
