@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../Circle Tech Mockup"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "3_Bain Careers like (for Landing)"
+  }
+}

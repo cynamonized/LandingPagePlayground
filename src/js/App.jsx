@@ -32,7 +32,7 @@ function App() {
         subtitle={"This is subtitle"}
         mainColor={"#CC0000"}
       />
-
+      {/* WIP */}
       <CircleAnimationBanner />
     </>
   );
