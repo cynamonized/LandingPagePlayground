@@ -29,25 +29,17 @@
   height: 100%;
 }
 
-/* Variables to steer the animation */
+$circles-animation-delay-start: 0.5s;
+$circles-animation-delay-interval: 0.3s;
 
-// Change to SCSS when you see it next time!
+$circle1-animation-time: 1.5s;
+$circle2-animation-time: 1.5s;
+$circle3-animation-time: 1.5s;
 
-// 2. THIS IS DIRTY
-:root {
-  --circles-animation-delay-start: 0.5s;
-  --circles-animation-delay-interval: 0.3s;
+$circle1-timing-function: ease-in-out;
+$circle2-timing-function: ease-in-out;
+$circle3-timing-function: ease-in-out;
 
-  --circle1-animation-time: 1.5s;
-  --circle2-animation-time: 1.5s;
-  --circle3-animation-time: 1.5s;
-
-  --circle1-timing-function: ease-in-out;
-  --circle2-timing-function: ease-in-out;
-  --circle3-timing-function: ease-in-out;
-}
-
-/* Circles */
 .reverse-circle {
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -56,10 +48,10 @@
 
 .reverse-circle1 {
   width: 68.3%;
-  animation: pulse-reverse-circle-1 var(--circle1-animation-time)
-    var(--circle1-timing-function);
+  animation: pulse-reverse-circle-1 $circle1-animation-time
+    $circle1-timing-function;
   animation-fill-mode: forwards;
-  animation-delay: var(--circles-animation-delay-start);
+  animation-delay: $circles-animation-delay-start;
   border: 1px solid white;
   opacity: 0;
 }
@@ -84,12 +76,11 @@
 
 .reverse-circle2 {
   width: 55%;
-  animation: pulse-reverse-circle-2 var(--circle2-animation-time)
-    var(--circle2-timing-function);
+  animation: pulse-reverse-circle-2 $circle2-animation-time
+    $circle2-timing-function;
   animation-fill-mode: forwards;
   animation-delay: calc(
-    var(--circles-animation-delay-start) +
-      var(--circles-animation-delay-interval)
+    $circles-animation-delay-start + $circles-animation-delay-interval
   );
   border: 6px solid white;
   opacity: 0;
@@ -115,12 +106,11 @@
 
 .reverse-circle3 {
   width: 41%;
-  animation: pulse-reverse-circle-3 var(--circle3-animation-time)
-    var(--circle3-timing-function);
+  animation: pulse-reverse-circle-3 $circle3-animation-time
+    $circle3-timing-function;
   animation-fill-mode: forwards;
   animation-delay: calc(
-    var(--circles-animation-delay-start) +
-      (var(--circles-animation-delay-interval) * 2)
+    $circles-animation-delay-start + ($circles-animation-delay-interval * 2)
   );
   border: 2px solid white;
   opacity: 0;

@@ -9,6 +9,8 @@ export const CircleMockupBoth = ({
   mainTitle,
   subtitle,
   mainColor,
+  backgroundColor,
+  blockColor,
 }) => {
   const [scrollElement, setScrollElement] = useState(null);
   const ref = useRef(null);
@@ -34,12 +36,16 @@ export const CircleMockupBoth = ({
           mainTitle={mainTitle}
           subtitle={subtitle}
           mainColor={mainColor}
+          backgroundColor={backgroundColor}
+          blockColor={blockColor}
         />
         <PhoneMockLeftDuo
           circlePath={circlePath}
           mainTitle={mainTitle}
           subtitle={subtitle}
           mainColor={mainColor}
+          backgroundColor={backgroundColor}
+          blockColor={blockColor}
         />
       </div>
     </div>

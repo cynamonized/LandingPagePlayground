@@ -15,6 +15,8 @@ export const PhoneMockCenterDuo = ({
   mainTitle,
   subtitle,
   mainColor,
+  backgroundColor,
+  blockColor,
 }) => {
   const [scrollElement, setScrollElement] = useState(null);
   const ref = useRef(null);
@@ -27,13 +29,26 @@ export const PhoneMockCenterDuo = ({
     <div className="mockup-container-duo">
       <div className="container__iphone">
         <img src={iPhoneMockup} className="iphone__image" />
-        <div className="iphone__body" ref={ref}>
+        <div
+          className="iphone__body"
+          ref={ref}
+          style={{ background: backgroundColor }}
+        >
           <ParallaxProvider scrollContainer={scrollElement}>
             <div className="iphone__top-placeholder">
               <div className="top-placeholder__main-block">
-                <div className="main-block__row"></div>
-                <div className="main-block__row"></div>
-                <div className="main-block__row"></div>
+                <div
+                  className="main-block__row"
+                  style={{ background: blockColor }}
+                ></div>
+                <div
+                  className="main-block__row"
+                  style={{ background: blockColor }}
+                ></div>
+                <div
+                  className="main-block__row"
+                  style={{ background: blockColor }}
+                ></div>
               </div>
             </div>
             <div className="iphone__circle-section-center">
@@ -53,10 +68,22 @@ export const PhoneMockCenterDuo = ({
             </div>
             <div className="iphone__bottom-placeholder">
               <div className="bottom-placeholder__main-block">
-                <div className="main-block__row"></div>
-                <div className="main-block__row"></div>
-                <div className="main-block__row"></div>
-                <div className="main-block__row"></div>
+                <div
+                  className="main-block__row"
+                  style={{ background: blockColor }}
+                ></div>
+                <div
+                  className="main-block__row"
+                  style={{ background: blockColor }}
+                ></div>
+                <div
+                  className="main-block__row"
+                  style={{ background: blockColor }}
+                ></div>
+                <div
+                  className="main-block__row"
+                  style={{ background: blockColor }}
+                ></div>
               </div>
             </div>
           </ParallaxProvider>

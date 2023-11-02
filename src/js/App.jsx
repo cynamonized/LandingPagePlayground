@@ -40,18 +40,24 @@ function App() {
           mainTitle={"Technology Report 2023"}
           subtitle={"This is subtitle"}
           mainColor={"#CC0000"}
+          backgroundColor={"#0d1522"}
+          blockColor={"#1b0d49"}
         />
         <PhoneMockCenterDuo
           circlePath={"/images/CircleMainMobile.png"}
           mainTitle={"Technology Report 2023"}
           subtitle={"This is subtitle"}
           mainColor={"#CC0000"}
+          backgroundColor={"#0d1522"}
+          blockColor={"#1b0d49"}
         />
         <PhoneMockLeftDuo
           circlePath={"/images/CircleMainMobile.png"}
           mainTitle={"Technology Report 2023"}
           subtitle={"This is subtitle"}
           mainColor={"#CC0000"}
+          backgroundColor={"#0d1522"}
+          blockColor={"#1b0d49"}
         />
       </div>
 
