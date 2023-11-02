@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import "../../scss/main.scss";
 import "../../scss/Components/circleBoth.scss";
-import { PhoneMockCenterDuo } from "./PhoneMockCenterDuo";
-import { PhoneMockLeftDuo } from "./PhoneMockLeftDuo";
+import { PhoneMockCenterDuo } from "./PhoneMockCenter";
+import { PhoneMockLeftDuo } from "./PhoneMockLeft";
 
 export const CircleMockupBoth = ({
   circlePath,

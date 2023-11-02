@@ -1,18 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import "../../scss/main.scss";
-import "../../scss/Components/PhoneMockCenterDuo.scss";
+import "../../scss/Components/PhoneMockDuo.scss";
 import {
   useParallax,
   useParallaxController,
   ParallaxProvider,
 } from "react-scroll-parallax";
-import "../../scss/Components/circleHero.scss";
-import { ParallaxCircle, ImageCircle } from "./CircleHero";
-import CircleIMG from "/images/CircleMainMobile.png";
 import BLogo from "/images/logo.svg";
 import iPhoneMockup from "/images/iphonmockup.svg";
 
-export const PhoneMockCenterDuo = ({
+export const PhoneMockLeftDuo = ({
   circlePath,
   mainTitle,
   subtitle,
@@ -26,7 +23,7 @@ export const PhoneMockCenterDuo = ({
   }, []);
 
   return (
-    <div className="mockup-container-center-duo">
+    <div className="mockup-container-duo">
       <div className="container__iphone">
         <img src={iPhoneMockup} className="iphone__image" />
         <div className="iphone__body" ref={ref}>
@@ -38,9 +35,10 @@ export const PhoneMockCenterDuo = ({
                 <div className="main-block__row"></div>
               </div>
             </div>
-            <div className="iphone__circle-section">
+            <div className="iphone__circle-section-left">
               <ParallaxPhone circlePath={circlePath} />
               <div className="circle-section__content">
+                <img src={BLogo} className="content__logo" />
                 <h2 className="content__title">{mainTitle}</h2>
                 <h4 className="content__subtitle">{subtitle}</h4>
                 <p
@@ -49,8 +47,6 @@ export const PhoneMockCenterDuo = ({
                 >
                   LEARN MORE
                 </p>
-
-                <img src={BLogo} className="content__logo" />
               </div>
             </div>
             <div className="iphone__bottom-placeholder">
@@ -69,9 +65,8 @@ export const PhoneMockCenterDuo = ({
 };
 
 const ParallaxPhone = ({ circlePath }) => {
-  const { ref } = useParallax({ rotate: [0, 160] });
   return (
-    <div className="circle-section__circle-mobile-container" ref={ref}>
+    <div className="circle-section__circle-mobile-container">
       <ParallaxPhoneCircle circlePath={circlePath} />
     </div>
   );
@@ -79,13 +74,13 @@ const ParallaxPhone = ({ circlePath }) => {
 
 const ParallaxPhoneCircle = ({ circlePath }) => {
   const parallaxController = useParallaxController();
-
+  const { ref } = useParallax({ rotate: [0, 160] });
   return (
     <img
-      // src={circlePath}
-      src={CircleIMG}
+      src={circlePath}
       onLoad={() => parallaxController.update()}
       className="circle-mobile-container__image"
+      ref={ref}
     />
   );
 };

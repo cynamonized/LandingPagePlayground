@@ -1,10 +1,9 @@
-import { useState } from "react";
 import "../scss/main.scss";
 import { CircleHero } from "./Components/CircleHero";
 import { CircleAnimationBanner } from "./Components/CircleAnimationBanner";
 import { CircleMockupBoth } from "./Components/CircleMockupBoth";
-import { PhoneMockCenterDuo } from "./Components/PhoneMockCenterDuo";
-import { PhoneMockLeftDuo } from "./Components/PhoneMockLeftDuo";
+import { PhoneMockCenterDuo } from "./Components/PhoneMockCenter";
+import { PhoneMockLeftDuo } from "./Components/PhoneMockLeft";
 
 const menuElements = [
   { name: "Contact", link: "#" },
@@ -57,6 +56,7 @@ function App() {
       </div>
 
       {/* WIP */}
+      {/* Might add option with labels/texts? */}
       <CircleAnimationBanner />
     </>
   );
