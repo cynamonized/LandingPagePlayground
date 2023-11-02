@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "../../scss/main.scss";
-import "../../scss/Components/circleMockup.scss";
+import "../../scss/Components/PhoneMockCenterDuo.scss";
 import {
   useParallax,
   useParallaxController,
@@ -12,10 +12,10 @@ import CircleIMG from "/images/CircleMainMobile.png";
 import BLogo from "/images/logo.svg";
 import iPhoneMockup from "/images/iphonmockup.svg";
 
-export const CircleMockup = ({
+export const PhoneMockCenterDuo = ({
   circlePath,
   mainTitle,
-  subTitle,
+  subtitle,
   mainColor,
 }) => {
   const [scrollElement, setScrollElement] = useState(null);
@@ -26,7 +26,7 @@ export const CircleMockup = ({
   }, []);
 
   return (
-    <div className="mockup-container">
+    <div className="mockup-container-center-duo">
       <div className="container__iphone">
         <img src={iPhoneMockup} className="iphone__image" />
         <div className="iphone__body" ref={ref}>
@@ -36,25 +36,25 @@ export const CircleMockup = ({
                 <div className="main-block__row"></div>
                 <div className="main-block__row"></div>
                 <div className="main-block__row"></div>
-                <div className="main-block__row"></div>
-                <div className="main-block__row"></div>
-                <div className="main-block__row"></div>
               </div>
             </div>
             <div className="iphone__circle-section">
               <ParallaxPhone circlePath={circlePath} />
               <div className="circle-section__content">
-                <h2 className="content__title">Technology Report 2023</h2>
-                <h4 className="content__subtitle">This a subtitle</h4>
-                <p className="content__CTA">LEARN MORE</p>
+                <h2 className="content__title">{mainTitle}</h2>
+                <h4 className="content__subtitle">{subtitle}</h4>
+                <p
+                  className="content__CTA"
+                  style={{ background: `${mainColor}` }}
+                >
+                  LEARN MORE
+                </p>
 
                 <img src={BLogo} className="content__logo" />
               </div>
             </div>
             <div className="iphone__bottom-placeholder">
               <div className="bottom-placeholder__main-block">
-                <div className="main-block__row"></div>
-                <div className="main-block__row"></div>
                 <div className="main-block__row"></div>
                 <div className="main-block__row"></div>
                 <div className="main-block__row"></div>
