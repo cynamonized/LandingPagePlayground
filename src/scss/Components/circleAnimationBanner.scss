@@ -1,14 +1,20 @@
 .circle-animation-container {
-  background-image: url("/images/Careers_middle_1.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
+  // background-image: url("/images/Careers_middle_1.png");
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  background-size: 190%;
+
   width: 100%;
   aspect-ratio: 1920/570;
-  animation-delay: 0.3s;
-  animation: image-zoom 1.2s ease-in-out;
-  animation-fill-mode: forwards;
   overflow: hidden;
+}
+
+.circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 @keyframes image-zoom {
@@ -21,13 +27,9 @@
   }
 }
 
-.circle-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
+//////////////////////////////////////////////////////////
+// VARIABLES TO STEER THE ANIMATION
+//////////////////////////////////////////////////////////
 
 $circles-animation-delay-start: 0.5s;
 $circles-animation-delay-interval: 0.3s;
@@ -40,20 +42,37 @@ $circle1-timing-function: ease-in-out;
 $circle2-timing-function: ease-in-out;
 $circle3-timing-function: ease-in-out;
 
+//////////////////////////////////////////////////////////
+// ANIMATION CLASSES
+//////////////////////////////////////////////////////////
+
+// CONTAINER
+.circle-animation-container--animation {
+  animation-delay: 0.3s;
+  animation: image-zoom 1.2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .reverse-circle {
   aspect-ratio: 1/1;
   border-radius: 50%;
   position: absolute;
 }
 
+// CIRCLE 1
+
 .reverse-circle1 {
   width: 68.3%;
+
+  border: 1px solid white;
+  opacity: 0;
+}
+
+.reverse-circle1--animation {
   animation: pulse-reverse-circle-1 $circle1-animation-time
     $circle1-timing-function;
   animation-fill-mode: forwards;
   animation-delay: $circles-animation-delay-start;
-  border: 1px solid white;
-  opacity: 0;
 }
 
 @keyframes pulse-reverse-circle-1 {
@@ -74,16 +93,21 @@ $circle3-timing-function: ease-in-out;
   }
 }
 
+// CIRCLE 2
+
 .reverse-circle2 {
   width: 55%;
+  border: 6px solid white;
+  opacity: 0;
+}
+
+.reverse-circle2--animation {
   animation: pulse-reverse-circle-2 $circle2-animation-time
     $circle2-timing-function;
   animation-fill-mode: forwards;
   animation-delay: calc(
     $circles-animation-delay-start + $circles-animation-delay-interval
   );
-  border: 6px solid white;
-  opacity: 0;
 }
 
 @keyframes pulse-reverse-circle-2 {
@@ -104,16 +128,21 @@ $circle3-timing-function: ease-in-out;
   }
 }
 
+// CIRCLE 3
+
 .reverse-circle3 {
   width: 41%;
+  border: 2px solid white;
+  opacity: 0;
+}
+
+.reverse-circle3--animation {
   animation: pulse-reverse-circle-3 $circle3-animation-time
     $circle3-timing-function;
   animation-fill-mode: forwards;
   animation-delay: calc(
     $circles-animation-delay-start + ($circles-animation-delay-interval * 2)
   );
-  border: 2px solid white;
-  opacity: 0;
 }
 
 @keyframes pulse-reverse-circle-3 {

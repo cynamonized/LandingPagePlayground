@@ -13,6 +13,10 @@ const menuElements = [
   { name: "More", link: "#" },
 ];
 
+//
+// 2. OPTION WITH NO PICTURE? - PRACTICALLY IT'S DONE
+//
+
 function App() {
   return (
     <>
@@ -27,9 +31,12 @@ function App() {
         subtitle={"Lorem ipsum placeholder dolor amet"}
       />
 
-      <div
+      <CircleAnimationBanner imagePath={"/images/Careers_middle_1.png"} />
+      <CircleAnimationBanner imagePath={"none"} />
+
+      {/* <div
         style={{
-          marginBottom: "50px",
+          marginBottom: "150px",
           display: "flex",
           flexDirection: "column",
           gap: "100px",
@@ -59,11 +66,7 @@ function App() {
           backgroundColor={"#0d1522"}
           blockColor={"#1b0d49"}
         />
-      </div>
-
-      {/* WIP */}
-      {/* Might add option with labels/texts? */}
-      <CircleAnimationBanner />
+      </div> */}
     </>
   );
 }
