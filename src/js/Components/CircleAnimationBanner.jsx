@@ -30,7 +30,6 @@ export const CircleAnimationBanner = ({ imagePath }) => {
               ? "reverse-circle reverse-circle1 reverse-circle1--animation"
               : "reverse-circle reverse-circle1"
           }
-          style={{ borderColor: "red", background: "red" }}
         ></div>
         <div
           className={
