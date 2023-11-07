@@ -3,7 +3,7 @@ import "../../scss/Components/circleAnimationBanner.scss";
 import { useInView } from "react-intersection-observer";
 
 //
-// 1. ADD ANY CHILDREN HERE?
+// 2. ADD ANY CHILDREN HERE?
 //
 
 export const CircleAnimationBanner = ({ imagePath }) => {
@@ -30,6 +30,7 @@ export const CircleAnimationBanner = ({ imagePath }) => {
               ? "reverse-circle reverse-circle1 reverse-circle1--animation"
               : "reverse-circle reverse-circle1"
           }
+          style={{ borderColor: "red", background: "red" }}
         ></div>
         <div
           className={

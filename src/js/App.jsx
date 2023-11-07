@@ -13,9 +13,9 @@ const menuElements = [
   { name: "More", link: "#" },
 ];
 
-//
+// //////////////////////////////////////////////////
 // 2. OPTION WITH NO PICTURE? - PRACTICALLY IT'S DONE
-//
+// //////////////////////////////////////////////////
 
 function App() {
   return (
@@ -32,6 +32,8 @@ function App() {
       />
 
       <CircleAnimationBanner imagePath={"/images/Careers_middle_1.png"} />
+
+      {/* Without background it will still make circles */}
       <CircleAnimationBanner imagePath={"none"} />
 
       {/* <div
