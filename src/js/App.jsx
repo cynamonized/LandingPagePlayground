@@ -8,6 +8,10 @@ import { PhoneMockLeftDuo } from "./Components/PhoneMockLeft";
 import { BasicNav } from "./Components/BasicNav";
 import { Motionhero } from "./Components/MotionHero";
 import { WindowTest } from "./Components/WindowTestLEGACY";
+import {
+  colorMainDark,
+  colorMainDarkTransparent,
+} from "./Settings/mediHomeScssVariables";
 
 const menuElements = [
   { name: "Contact", link: "#" },
@@ -34,6 +38,7 @@ function App() {
         firstName={firstName}
         secondName={lastName}
         mainColor={"#ffc400"}
+        backgroundColor={colorMainDark}
       />
 
       {/* <CircleHero

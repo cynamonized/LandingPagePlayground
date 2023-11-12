@@ -1,63 +1,96 @@
-function sketchMotionHero(p, props) {
-  let rotation = 0;
-  let windowWidth = 1024;
+import { HEXtoRGB } from "../Utilities/HEXtoRGB";
 
-  p.setup = function () {
-    p.createCanvas(windowWidth, 500);
+function sketchMotionHero(p, props) {
+  let componentWidth;
+  let componentHeight;
+  let componentColor;
+  let currentCanvasWidth;
+
+  ///////////////////////////////////////////////////
+
+  // 1. MAJOR BUG -> It loads without canvas at first
+  // bc we don't have immediate info about height/width
+  // how to fix that? how to load that on 1st render
+
+  ////////////////////////////////////////////////////
+
+  ///////////////////////////////////////////////////
+
+  // 2. Apply NatureOfCode example (mine from other VSC)
+
+  ////////////////////////////////////////////////////
+
+  // Reading background and sizes color from props
+  p.updateWithProps = (props) => {
+    componentWidth = props.windowW;
+    componentHeight = props.windowH;
+    componentColor = HEXtoRGB(props.background);
+    console.log("ENGAGE ONCE");
   };
 
-  // p.updateWithProps = (props) => {
-  //   // windowWidth = Object.assign(windowWidth, props);
-  //   windowWidth = props.windowW;
-  // };
+  // Initial canvas setup
+  p.setup = function () {
+    p.updateWithProps = (props) => {
+      componentWidth = props.windowW;
+      componentHeight = props.windowH;
+      componentColor = HEXtoRGB(props.background);
+    };
+
+    p.createCanvas(componentWidth, componentHeight);
+    currentCanvasWidth = componentWidth;
+  };
 
   p.draw = function () {
-    let currentCanvasWidth = windowWidth;
+    p.frameRate(5);
 
-    p.frameRate(2);
-    if (p.mouseIsPressed) {
-      p.fill(0);
-    } else {
-      p.fill(255);
+    // console.log(componentColor);
+    p.background(componentColor.red, componentColor.green, componentColor.blue);
+    // console.log(componentColor);
+    // console.log(componentColor.join(", "));
+
+    // p.updateWithProps = (props) => {
+    //   componentWidth = props.windowW;
+    //   componentColor = HEXtoRGB(props.background);
+    //   console.log("AM I HERE?");
+    // };
+
+    if (!componentColor) {
+      p.updateWithProps = (props) => {
+        console.log("ENGAGING....");
+        componentColor = HEXtoRGB(props.background);
+      };
     }
-    p.ellipse(p.mouseX, p.mouseY, 80, 80);
-    // console.log(windowWidth);
 
-    ///////////////////////////////////////
-
-    p.updateWithProps = (props) => {
-      // windowWidth = Object.assign(windowWidth, props);
-      windowWidth = props.windowW;
-    };
-    console.log("ULTIMATE TEST:", windowWidth);
-
-    /////////////////////////////////////
-    p.textSize(50);
-    p.fill("white");
-    p.text(`THIS IS WORKING: ${windowWidth}`, 0, 300);
-
-    if (currentCanvasWidth != windowWidth) {
-      console.log("CHANGING CANVAS SIZE");
-      // IT DOESN"T WORK SO WELL YET
-      // IT WORKS JUST ONCE
-
-      // FUNCTION ONLY UPDATES windowWidth once
-      // p.updateWidthProps function
-      // maybe it should be played here?
-
-      // so only when width changes it takes prop.windoW a
-      // and adds it to draw function/canvas
-
-      // AOBOVE METHOD ALEADY WORKS IN ////////////////
-      // NOW JUST ADD IT TO THIS IF SO IT RESIZES CANVAS PROPERLY
-
-      // AND ONCE IT's DONE, store canvas.w and .h seprately?
-      // for visuals calculations - measure when offscrean etc.
-
-      resizeCanvas(windowWidth, 500);
-      currentCanvasWidth = windowWidth;
+    // If component width changes, then reboot canvas
+    if (currentCanvasWidth != componentWidth) {
+      console.log("CHANGING CANVAS SIZE TO:", componentWidth);
+      p.resizeCanvas(componentWidth, componentHeight);
+      currentCanvasWidth = componentWidth;
     }
   };
 }
 
 export default sketchMotionHero;
+
+/////////////////////////////////////
+// LEGACY TEST - TO BE REMOVED
+/////////////////////////////////////
+// if (p.mouseIsPressed) {
+//   p.fill(0);
+// } else {
+//   p.fill(255);
+// }
+// p.ellipse(p.mouseX, p.mouseY, 80, 80);
+
+///////////////////////////////////////
+
+// p.updateWithProps = (props) => {
+//   // componentWidth = Object.assign(componentWidth, props);
+//   componentWidth = props.windowW;
+// };
+
+// p.background(props.background);
+
+// p.textSize(50);
+// p.fill("white");
+// p.text(`THIS IS WORKING: ${componentWidth}`, 0, 300);

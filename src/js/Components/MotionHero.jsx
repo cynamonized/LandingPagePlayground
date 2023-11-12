@@ -6,7 +6,13 @@ import { BasicNav } from "./BasicNav";
 import { useState, useEffect } from "react";
 import { useWindowSize } from "@uidotdev/usehooks";
 
-export const Motionhero = ({ menuList, firstName, secondName, mainColor }) => {
+export const Motionhero = ({
+  menuList,
+  firstName,
+  secondName,
+  mainColor,
+  backgroundColor,
+}) => {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth,
@@ -25,10 +31,16 @@ export const Motionhero = ({ menuList, firstName, secondName, mainColor }) => {
         mainColor={mainColor}
       />
 
-      <ReactP5Wrapper sketch={sketchMotionHero} windowW={size.width} />
+      <ReactP5Wrapper
+        sketch={sketchMotionHero}
+        windowW={size.width}
+        windowH={600}
+        // background={backgroundColor}
+        background={"#CC0000"}
+      />
 
       <p style={{ color: "white", padding: "150px", display: "block" }}>
-        THIS IS YOUR PARAMS: {size.width}, {size.height}
+        THESE ARE YOUR COMPONENT PARAMS: {size.width}, {size.height}
       </p>
     </div>
   );
