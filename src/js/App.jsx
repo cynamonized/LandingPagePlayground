@@ -1,9 +1,13 @@
 import "../scss/main.scss";
+import "../scss/Components/compMerger.scss";
 import { CircleHero } from "./Components/CircleHero";
 import { CircleAnimationBanner } from "./Components/CircleAnimationBanner";
 import { CircleMockupBoth } from "./Components/CircleMockupBoth";
 import { PhoneMockCenterDuo } from "./Components/PhoneMockCenter";
 import { PhoneMockLeftDuo } from "./Components/PhoneMockLeft";
+import { BasicNav } from "./Components/BasicNav";
+import { Motionhero } from "./Components/MotionHero";
+import { WindowTest } from "./Components/WindowTestLEGACY";
 
 const menuElements = [
   { name: "Contact", link: "#" },
@@ -13,6 +17,11 @@ const menuElements = [
   { name: "More", link: "#" },
 ];
 
+const firstName = "Test";
+const lastName = "Exam";
+
+const backgroundHTML = "CC0000";
+
 // //////////////////////////////////////////////////
 // 2. OPTION WITH NO PICTURE? - PRACTICALLY IT'S DONE
 // //////////////////////////////////////////////////
@@ -20,7 +29,14 @@ const menuElements = [
 function App() {
   return (
     <>
-      <CircleHero
+      <Motionhero
+        menuList={menuElements}
+        firstName={firstName}
+        secondName={lastName}
+        mainColor={"#ffc400"}
+      />
+
+      {/* <CircleHero
         selfRotating={false}
         firstName={"Circle"}
         secondName={"Testing"}
@@ -29,12 +45,12 @@ function App() {
         mainColor={"#ffc400"}
         title={"Lorem ipsum dolor amet"}
         subtitle={"Lorem ipsum placeholder dolor amet"}
-      />
+      /> */}
 
-      <CircleAnimationBanner imagePath={"/images/Careers_middle_1.png"} />
+      {/* <CircleAnimationBanner imagePath={"/images/Careers_middle_1.png"} /> */}
 
       {/* Without background it will still make circles */}
-      <CircleAnimationBanner imagePath={"none"} />
+      {/* <CircleAnimationBanner imagePath={"none"} /> */}
 
       {/* <div
         style={{

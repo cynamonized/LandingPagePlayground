@@ -1,0 +1,11 @@
+@import "src/scss/settings/_reset";
+@import "src/scss/settings/_variables.module.scss";
+@import "src/scss/settings/_mixins";
+@import "src/scss/settings/_buttons";
+
+.nav-hero {
+  font-family: $font-poppins-circle;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}

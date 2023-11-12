@@ -1,0 +1,42 @@
+@import "src/scss/settings/_reset";
+@import "src/scss/settings/_variables.module.scss";
+@import "src/scss/settings/_mixins";
+@import "src/scss/settings/_buttons";
+
+.nav-merged {
+  border-bottom: 1px solid white;
+  z-index: 2;
+  background-color: $color-main-dark-transparent;
+  position: absolute;
+  .nav-merged__container {
+    @include flex(space-between, center);
+    .container__left-column {
+      .left-column__logo {
+        color: white;
+
+        font-size: 2rem;
+        padding: 20px;
+      }
+    }
+
+    .container__right-column {
+      color: white;
+
+      a {
+        color: white;
+      }
+
+      .right-column__menu-list {
+        @include flex(center, center);
+        li {
+          padding: 20px;
+          cursor: pointer;
+
+          &:hover {
+            color: rgb(124, 124, 124);
+          }
+        }
+      }
+    }
+  }
+}
