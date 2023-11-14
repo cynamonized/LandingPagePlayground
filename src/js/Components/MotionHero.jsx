@@ -36,7 +36,7 @@ export const Motionhero = ({
         windowW={size.width}
         windowH={600}
         // background={backgroundColor}
-        background={"#CC0000"}
+        background={backgroundColor}
       />
 
       <p style={{ color: "white", padding: "150px", display: "block" }}>
