@@ -23,16 +23,7 @@ const menuElements = [
 ];
 
 const firstName = "Test";
-const lastName = "Exam";
-
-palette = [
-  toxi.color.TColor.newHex("1c0f17"),
-  toxi.color.TColor.newHex("271d2e"),
-  toxi.color.TColor.newHex("2c3857"),
-  toxi.color.TColor.newHex("155e73").setBrightness(0.9),
-  toxi.color.TColor.newHex("e8ca59"),
-  toxi.color.TColor.newHex("891b1b"),
-];
+const lastName = "Page";
 
 // //////////////////////////////////////////////////
 // 2. OPTION WITH NO PICTURE? - PRACTICALLY IT'S DONE

@@ -2,56 +2,33 @@ import {
   ParticlesFieldPalette,
   ParticlesFieldOptions,
 } from "./ParticlesFieldSettings";
+import toxi from "toxiclibsjs";
 
-// let canvas = document.getElementById("example");
-// let ctx = canvas.getContext("2d");
+export const throttleStreams = (width, height) => {
+  let streamsTemp = [];
 
-// P5 is my canvas and context;
+  while (ParticlesFieldOptions.numStreams > streamsTemp.length) {
+    streamsTemp.push(createStream(width, height));
+  }
+  while (ParticlesFieldOptions.numStreams < streamsTemp.length) {
+    streamsTemp.shift();
+  }
 
-let perlin = new toxi.math.noise.PerlinNoise();
-let bounds = new toxi.geom.Rect();
-let lastPos = new toxi.geom.Vec2D();
-// let gui;
-let offset = 0;
-let options;
-let streams = [];
-let palette;
+  return streamsTemp;
+};
 
-// setCanvasSize();
-// ctx.fillStyle = "#000000";
-// ctx.strokeStyle = "#ff0000";
-// ctx.lineWidth = 1.5;
+export const createStream = (width, height) => {
+  var vec = getRandomVector(width, height);
+  vec.color =
+    ParticlesFieldPalette[
+      Math.floor(Math.random() * ParticlesFieldPalette.length)
+    ].toRGBACSS();
+  return vec;
+};
 
-// GUI -> Irrelevant !!!
-
-// gui = new dat.GUI();
-// gui.add(options, "running").onChange(function () {
-//   if (options.running) {
-//     draw();
-//   }
-// });
-// gui
-//   .add(options, "numStreams", 1, 4500, 1.0)
-//   .name("# Streams")
-//   .onChange(throttleStreams);
-// gui.add(options, "step", 0.25, 10, 0.25).name("Speed");
-// gui.add(options, "distort", -0.5, 0.5, 0.001).name("Progression");
-// gui.add(options, "strength", 0.01, Math.PI * 2, 0.01).name("Directional");
-// gui.add(options, "scalar", 0.01, 0.25, 0.01).name("Scalar");
-
-// function throttleStreams() {
-//   while (options.numStreams > streams.length) {
-//     streams.push(createStream());
-//   }
-//   while (options.numStreams < streams.length) {
-//     streams.shift();
-//   }
-// }
-
-// throttleStreams();
-
-// function setCanvasSize(){
-//     canvas.width = window.innerWidth;
-//     canvas.height= 500;
-//     bounds.set( 0, 0, canvas.width, canvas.height );
-// }
+export const getRandomVector = (width, height) => {
+  return new toxi.geom.Vec2D(Math.random(), Math.random()).scaleSelf(
+    width,
+    height
+  );
+};

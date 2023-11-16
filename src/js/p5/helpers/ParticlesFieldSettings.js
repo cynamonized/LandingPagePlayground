@@ -1,3 +1,5 @@
+import toxi from "toxiclibsjs";
+
 export const ParticlesFieldPalette = [
   toxi.color.TColor.newHex("1c0f17"),
   toxi.color.TColor.newHex("271d2e"),
@@ -9,9 +11,10 @@ export const ParticlesFieldPalette = [
 
 export const ParticlesFieldOptions = {
   running: true,
-  numStreams: 400,
-  distort: 0,
+  numStreams: 800,
+  distort: 1,
   strength: Math.PI,
   scalar: 0.05,
   step: 2,
+  tailLength: 0.15,
 };
