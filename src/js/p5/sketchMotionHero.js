@@ -12,6 +12,7 @@ import {
 } from "./helpers/ParticlesFieldSettings";
 import toxi from "toxiclibsjs";
 import { throttleStreams } from "./helpers/ParticlesField.js";
+import { createStream } from "./helpers/ParticlesField.js";
 
 function sketchMotionHero(p, props) {
   ////////////////////////////////////////////////////
@@ -37,6 +38,7 @@ function sketchMotionHero(p, props) {
   let offset = 0;
   let streams = [];
   let pt = new toxi.geom.Vec2D();
+  let compColorFortmatted;
 
   // Callbacks to manipulate above variables in draw() function
   function addOffset(addition) {
@@ -59,6 +61,9 @@ function sketchMotionHero(p, props) {
     componentHeight = props.windowH;
     componentColor = HEXtoRGB(props.background);
   };
+
+  // throttleStreams2(componentWidth, componentHeight);
+  // console.log(streams);
 
   ////////////////////////////////////////////////////
   ////////////////////////////////////////////////////
@@ -91,6 +96,9 @@ function sketchMotionHero(p, props) {
 
     // B. ParticlesField setup
     streams = throttleStreams(componentWidth, componentHeight);
+
+    compColorFortmatted = componentColor.join(", ").toString();
+    console.log(compColorFortmatted);
   };
 
   ////////////////////////////////////////////////////
@@ -114,7 +122,6 @@ function sketchMotionHero(p, props) {
       };
     }
 
-    const compColorFortmatted = componentColor.join(", ").toString();
     ////////////////////////////////////////////////////
     // 3. Put actual draw below (engine)
     ///////////////////////////////////////////////////
@@ -136,11 +143,10 @@ function sketchMotionHero(p, props) {
       changePt,
       perlin,
       bounds,
-      componentColor
-    );
-
-    p.background(
-      `rgba(${compColorFortmatted},${ParticlesFieldOptions.tailLength})`
+      componentColor,
+      componentWidth,
+      componentHeight,
+      compColorFortmatted
     );
   };
 }

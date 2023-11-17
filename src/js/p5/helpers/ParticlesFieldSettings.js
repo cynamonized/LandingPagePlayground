@@ -11,10 +11,11 @@ export const ParticlesFieldPalette = [
 
 export const ParticlesFieldOptions = {
   running: true,
-  numStreams: 800,
-  distort: 1,
+  numStreams: 500,
+  distort: 0.8,
   strength: Math.PI,
-  scalar: 0.05,
+  scalar: 0.01,
   step: 2,
-  tailLength: 0.15,
+  tailLength: 0.1,
+  strokeWeight: 2,
 };

@@ -1,5 +1,6 @@
 import toxi from "toxiclibsjs";
 import { getRandomVector } from "../helpers/ParticlesField";
+import { createStream } from "../helpers/ParticlesField";
 
 export const ParticlesField_Engine = (
   streams,
@@ -13,7 +14,10 @@ export const ParticlesField_Engine = (
   changePtCallback,
   perlin,
   bounds,
-  componentColor
+  componentColor,
+  componentWidth,
+  componentHeight,
+  compColorFortmatted
 ) => {
   // let i = 0;
   let l = streams.length;
@@ -22,7 +26,6 @@ export const ParticlesField_Engine = (
   addOffsetCallback(ParticlesFieldOptions.distort);
 
   for (let i = 0; i < streams.length; i++) {
-    p.background(...componentColor, 0.05);
     stream = streams[i];
 
     changeLastPosCallback(stream);
@@ -34,21 +37,31 @@ export const ParticlesField_Engine = (
 
     stream.addSelf(dir.normalize(ParticlesFieldOptions.step * 3));
     p.stroke(stream.color);
+    p.strokeWeight(ParticlesFieldOptions.strokeWeight);
     p.line(lastPos.x, lastPos.y, stream.x, stream.y);
 
     if (!bounds.containsPoint(stream)) {
       stream.set(getRandomVector());
     }
   }
+
+  if (ParticlesFieldOptions.numStreams >= streams.length) {
+    streams.push(createStream(componentWidth, componentHeight));
+  }
+  if (ParticlesFieldOptions.numStreams < streams.length) {
+    streams.shift();
+  }
+
+  p.blendMode(p.REMOVE);
+  p.colorMode(p.RGB, 13, 21, 34);
+  // WOW
+  // p.blendMode(p.DIFFERENCE);
+
+  p.background(
+    `rgba(${compColorFortmatted},${ParticlesFieldOptions.tailLength})`
+  );
+
+  p.blendMode(p.BLEND);
 };
-
-// 1. Throttle doesn't work -> it could be added as callback here?
-//    not sure how it works, it should work all the time (???)
-
-// LHS < throttleStreams should be run once in the setup? no!
-// It should be running contantly where it switched loops from
-// one to another << org works like this TBD
-
-// 2. >> Background color is changing because of alpha bckg()
 
 // 3. Tail doesn't dissapear fully << bckg rendering issue
