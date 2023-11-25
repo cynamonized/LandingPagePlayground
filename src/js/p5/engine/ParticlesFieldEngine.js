@@ -19,7 +19,7 @@ export const ParticlesField_Engine = (
   componentHeight,
   compColorFortmatted,
   backgroundImage,
-  canvas
+  dotsCanvas
 ) => {
   // let i = 0;
   let l = streams.length;
@@ -41,9 +41,9 @@ export const ParticlesField_Engine = (
     let dir = toxi.geom.Vec2D.fromTheta(angle);
 
     stream.addSelf(dir.normalize(ParticlesFieldOptions.step * 3));
-    canvas.stroke(stream.color);
-    canvas.strokeWeight(ParticlesFieldOptions.strokeWeight);
-    canvas.line(lastPos.x, lastPos.y, stream.x, stream.y);
+    dotsCanvas.stroke(stream.color);
+    dotsCanvas.strokeWeight(ParticlesFieldOptions.strokeWeight);
+    dotsCanvas.line(lastPos.x, lastPos.y, stream.x, stream.y);
 
     if (!bounds.containsPoint(stream)) {
       stream.set(getRandomVector());
@@ -62,7 +62,7 @@ export const ParticlesField_Engine = (
   // p.background(13, 21, 34, 50);
   ///////////////////////////////////////////////////////////
 
-  canvas.image(backgroundImage, 0, 0);
-  canvas.tint(255, 40);
-  p.image(canvas, 0, 0);
+  dotsCanvas.image(backgroundImage, 0, 0);
+  dotsCanvas.tint(255, 40);
+  p.image(dotsCanvas, 0, 0);
 };

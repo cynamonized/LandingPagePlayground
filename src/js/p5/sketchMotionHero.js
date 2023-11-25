@@ -29,7 +29,7 @@ function sketchMotionHero(p, props) {
   let backgroundImagePath;
   let backgroundImage;
   let imageStart = true;
-  let dots;
+  let dotsCanvas;
 
   // A. Variables for vehicle - if not using, comment it
   let vehicle;
@@ -106,7 +106,7 @@ function sketchMotionHero(p, props) {
     p.pixelDensity(1);
     compColorFortmatted = componentColor.join(", ").toString();
     console.log(compColorFortmatted);
-    dots = p.createGraphics(componentWidth, componentHeight);
+    dotsCanvas = p.createGraphics(componentWidth, componentHeight);
   };
 
   ////////////////////////////////////////////////////
@@ -156,9 +156,16 @@ function sketchMotionHero(p, props) {
       componentHeight,
       compColorFortmatted,
       backgroundImage,
-      dots
+      dotsCanvas
     );
   };
 }
 
 export default sketchMotionHero;
+
+//////////////////////////////////////////////////////////
+//
+//   NEED TO HANDLE SCREEN CHANGES SIZES -> DOTS CANVAS SIZE
+//   IMAGE IS SCALING BADLY <- NEED TO FOCUS ON COMPONENT HEIGHT
+//
+//////////////////////////////////////////////////////////
