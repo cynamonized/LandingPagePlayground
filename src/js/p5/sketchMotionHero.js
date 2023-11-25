@@ -26,6 +26,10 @@ function sketchMotionHero(p, props) {
   let componentHeight;
   let componentColor;
   let currentCanvasWidth;
+  let backgroundImagePath;
+  let backgroundImage;
+  let imageStart = true;
+  let dots;
 
   // A. Variables for vehicle - if not using, comment it
   let vehicle;
@@ -40,7 +44,7 @@ function sketchMotionHero(p, props) {
   let pt = new toxi.geom.Vec2D();
   let compColorFortmatted;
 
-  // Callbacks to manipulate above variables in draw() function
+  // (Callbacks to manipulate above variables in draw() function)
   function addOffset(addition) {
     offset += addition;
   }
@@ -60,6 +64,7 @@ function sketchMotionHero(p, props) {
     componentWidth = props.windowW;
     componentHeight = props.windowH;
     componentColor = HEXtoRGB(props.background);
+    backgroundImagePath = props.image;
   };
 
   // throttleStreams2(componentWidth, componentHeight);
@@ -76,6 +81,7 @@ function sketchMotionHero(p, props) {
       componentWidth = props.windowW;
       componentHeight = props.windowH;
       componentColor = HEXtoRGB(props.background);
+      backgroundImagePath = props.image;
     };
     p.createCanvas(componentWidth, componentHeight);
     currentCanvasWidth = componentWidth;
@@ -96,9 +102,11 @@ function sketchMotionHero(p, props) {
 
     // B. ParticlesField setup
     streams = throttleStreams(componentWidth, componentHeight);
-
+    backgroundImage = p.loadImage(backgroundImagePath);
+    p.pixelDensity(1);
     compColorFortmatted = componentColor.join(", ").toString();
     console.log(compColorFortmatted);
+    dots = p.createGraphics(componentWidth, componentHeight);
   };
 
   ////////////////////////////////////////////////////
@@ -146,7 +154,9 @@ function sketchMotionHero(p, props) {
       componentColor,
       componentWidth,
       componentHeight,
-      compColorFortmatted
+      compColorFortmatted,
+      backgroundImage,
+      dots
     );
   };
 }

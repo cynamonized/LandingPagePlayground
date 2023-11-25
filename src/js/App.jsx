@@ -36,7 +36,7 @@ function App() {
         menuList={menuElements}
         firstName={firstName}
         secondName={lastName}
-        mainColor={"#ffc400"}
+        mainColor={"#ED306C"}
         backgroundColor={colorMainDark}
       />
 

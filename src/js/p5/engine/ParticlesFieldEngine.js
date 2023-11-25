@@ -17,11 +17,16 @@ export const ParticlesField_Engine = (
   componentColor,
   componentWidth,
   componentHeight,
-  compColorFortmatted
+  compColorFortmatted,
+  backgroundImage,
+  canvas
 ) => {
   // let i = 0;
   let l = streams.length;
   let stream;
+
+  p.image(backgroundImage, 0, 0);
+  backgroundImage.resize(componentWidth, 0);
 
   addOffsetCallback(ParticlesFieldOptions.distort);
 
@@ -36,9 +41,9 @@ export const ParticlesField_Engine = (
     let dir = toxi.geom.Vec2D.fromTheta(angle);
 
     stream.addSelf(dir.normalize(ParticlesFieldOptions.step * 3));
-    p.stroke(stream.color);
-    p.strokeWeight(ParticlesFieldOptions.strokeWeight);
-    p.line(lastPos.x, lastPos.y, stream.x, stream.y);
+    canvas.stroke(stream.color);
+    canvas.strokeWeight(ParticlesFieldOptions.strokeWeight);
+    canvas.line(lastPos.x, lastPos.y, stream.x, stream.y);
 
     if (!bounds.containsPoint(stream)) {
       stream.set(getRandomVector());
@@ -52,16 +57,12 @@ export const ParticlesField_Engine = (
     streams.shift();
   }
 
-  p.blendMode(p.REMOVE);
-  p.colorMode(p.RGB, 13, 21, 34);
-  // WOW
-  // p.blendMode(p.DIFFERENCE);
+  // To use if no image - comment below if image is not here
+  ////////////////////////////////////////////////////////////
+  // p.background(13, 21, 34, 50);
+  ///////////////////////////////////////////////////////////
 
-  p.background(
-    `rgba(${compColorFortmatted},${ParticlesFieldOptions.tailLength})`
-  );
-
-  p.blendMode(p.BLEND);
+  canvas.image(backgroundImage, 0, 0);
+  canvas.tint(255, 40);
+  p.image(canvas, 0, 0);
 };
-
-// 3. Tail doesn't dissapear fully << bckg rendering issue
