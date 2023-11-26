@@ -28,7 +28,6 @@ function sketchMotionHero(p, props) {
   let currentCanvasWidth;
   let backgroundImagePath;
   let backgroundImage;
-  let imageStart = true;
   let dotsCanvas;
 
   // A. Variables for vehicle - if not using, comment it
@@ -118,9 +117,21 @@ function sketchMotionHero(p, props) {
   p.draw = function () {
     // If component width changes, then reboot canvas with proper width
     if (currentCanvasWidth != componentWidth) {
-      console.log("CHANGING CANVAS SIZE TO:", componentWidth);
+      console.log("CHANGING CANVAS SIZE TO:", componentWidth, componentHeight);
       p.resizeCanvas(componentWidth, componentHeight);
+      dotsCanvas.width = componentWidth;
       currentCanvasWidth = componentWidth;
+      console.log("CHANGING GRAPHICS TO:", dotsCanvas.width, dotsCanvas.height);
+      ////////////////////////////////////////////////////////
+
+      // IT DOESN"T WORK WELL -> RESIZING IS BAD
+
+      //1 - Seconda canvas resize - here? not sure
+      // dotsCanvas = p.createGraphics(componentWidth, componentHeight);
+
+      // 2 - Resize image to fit comp width and height
+
+      ////////////////////////////////////////////////////////
     }
     // Setting frame rate
     p.frameRate(30);

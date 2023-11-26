@@ -5,13 +5,13 @@ import { createStream } from "../helpers/ParticlesField";
 export const ParticlesField_Engine = (
   streams,
   offset,
-  addOffsetCallback,
+  addOffset,
   p,
   ParticlesFieldOptions,
   lastPos,
-  changeLastPosCallback,
+  changeLastPos,
   pt,
-  changePtCallback,
+  changePt,
   perlin,
   bounds,
   componentColor,
@@ -21,20 +21,19 @@ export const ParticlesField_Engine = (
   backgroundImage,
   dotsCanvas
 ) => {
-  // let i = 0;
   let l = streams.length;
   let stream;
 
   p.image(backgroundImage, 0, 0);
-  backgroundImage.resize(componentWidth, 0);
+  // backgroundImage.resize(componentWidth, 0);
 
-  addOffsetCallback(ParticlesFieldOptions.distort);
+  addOffset(ParticlesFieldOptions.distort);
 
   for (let i = 0; i < streams.length; i++) {
     stream = streams[i];
 
-    changeLastPosCallback(stream);
-    changePtCallback(stream, ParticlesFieldOptions.scalar, offset);
+    changeLastPos(stream);
+    changePt(stream, ParticlesFieldOptions.scalar, offset);
 
     let noise = perlin.noise(pt.x, pt.y) - 0.5;
     let angle = ParticlesFieldOptions.strength * noise;
@@ -63,6 +62,7 @@ export const ParticlesField_Engine = (
   ///////////////////////////////////////////////////////////
 
   dotsCanvas.image(backgroundImage, 0, 0);
+  // backgroundImage.resize(componentWidth, 0);
   dotsCanvas.tint(255, 40);
   p.image(dotsCanvas, 0, 0);
 };

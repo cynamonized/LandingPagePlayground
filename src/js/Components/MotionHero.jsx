@@ -6,6 +6,8 @@ import { BasicNav } from "./BasicNav";
 import { useState, useEffect } from "react";
 import { useWindowSize } from "@uidotdev/usehooks";
 import particlesImage from "../../../images/Particles_cropped.jpg";
+import vehicle from "../p5/vehicle";
+import particles from "../p5/particles";
 
 export const Motionhero = ({
   menuList,
@@ -32,8 +34,19 @@ export const Motionhero = ({
         mainColor={mainColor}
       />
 
+      {/* Vehicle */}
+      {/* <ReactP5Wrapper
+        sketch={vehicle}
+        windowW={size.width}
+        windowH={600}
+        // background={backgroundColor}
+        background={"#0d1522"}
+        image={particlesImage}
+      /> */}
+
+      {/* Particles */}
       <ReactP5Wrapper
-        sketch={sketchMotionHero}
+        sketch={particles}
         windowW={size.width}
         windowH={600}
         // background={backgroundColor}
@@ -41,6 +54,7 @@ export const Motionhero = ({
         image={particlesImage}
       />
 
+      {/* Testing P5 wrapper width */}
       {/* <p style={{ color: "white", padding: "150px", display: "block" }}>
         THESE ARE P5 COMPONENT PARAMS: {size.width}, {size.height}
       </p> */}
