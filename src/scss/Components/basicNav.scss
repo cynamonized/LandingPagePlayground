@@ -8,15 +8,20 @@
   z-index: 2;
   background-color: $color-main-dark-transparent;
   position: absolute;
+  transition: height 0.5s ease-out;
+
   .nav-merged__container {
     @include flex(space-between, center);
     .container__left-column {
       .left-column__logo {
         color: white;
-
         font-size: 2rem;
         padding: 20px;
       }
+    }
+
+    @include tablet {
+      flex-wrap: wrap;
     }
 
     .container__right-column {
@@ -26,7 +31,12 @@
         color: white;
       }
 
+      @include tablet {
+        display: none;
+      }
+
       .right-column__menu-list {
+        transition: max-height 0.2s ease-out;
         @include flex(center, center);
         li {
           padding: 20px;
@@ -36,7 +46,83 @@
             color: rgb(124, 124, 124);
           }
         }
+
+        @include tablet {
+          align-self: flex-end;
+        }
       }
+    }
+
+    // HAMBURGER STARTS HERE
+    .container__menu-icon {
+      cursor: pointer;
+      float: right;
+      padding: 28px 20px;
+      position: relative;
+      user-select: none;
+
+      .navicon {
+        background: #fff;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+      }
+
+      .navicon:before,
+      .navicon:after {
+        background: #fff;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        width: 100%;
+      }
+
+      .navicon:before {
+        top: -5px;
+      }
+      .navicon:after {
+        top: 5px;
+      }
+
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+
+    .container__menu-btn {
+      display: none;
+    }
+
+    .container__menu-btn:checked ~ .container__right-column {
+      display: flex;
+      flex-basis: 100%;
+      // width: 100%;
+      // flex: 2 0 100%;
+      // flex-grow: 5;
+
+      .right-column__menu-list {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+
+    .container__menu-btn:checked ~ .container__menu-icon .navicon {
+      background: transparent;
+    }
+
+    .container__menu-btn:checked ~ .container__menu-icon .navicon:before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    .container__menu-btn:checked ~ .container__menu-icon .navicon:after {
+      transform: rotate(45deg);
+      top: 0;
     }
   }
 }

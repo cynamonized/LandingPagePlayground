@@ -13,7 +13,27 @@ export const BasicNav = ({ menuList, firstName, secondName, mainColor }) => {
             </p>
           </div>
 
+          {/* 
+          
+          1. 
+
+          WHEN HAMBURGET VISIBLE, DISPLAY: BLOCK and MOVE TO NEXT LINE
+          
+
+          */}
+
+          {/* HAMBURGER ICON */}
+          <input
+            className="container__menu-btn"
+            type="checkbox"
+            id="menu-btn"
+          />
+          <label className="container__menu-icon" htmlFor="menu-btn">
+            <span className="navicon"></span>
+          </label>
+
           <div className="container__right-column">
+            {/* ACTUAL MENU BELOW */}
             <ul className="right-column__menu-list">
               {menuList.map((element) => {
                 return (
