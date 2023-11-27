@@ -13,15 +13,6 @@ export const BasicNav = ({ menuList, firstName, secondName, mainColor }) => {
             </p>
           </div>
 
-          {/* 
-          
-          1. 
-
-          WHEN HAMBURGET VISIBLE, DISPLAY: BLOCK and MOVE TO NEXT LINE
-          
-
-          */}
-
           {/* HAMBURGER ICON */}
           <input
             className="container__menu-btn"

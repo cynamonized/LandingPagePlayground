@@ -62,6 +62,7 @@ function particles(p, props) {
       p.resizeCanvas(componentWidth, componentHeight);
       //   dotsCanvas.width = componentWidth;
       //   dotsCanvas.height = componentHeight;
+      dotsCanvas.remove();
       dotsCanvas = p.createGraphics(componentWidth, componentHeight);
       currentCanvasWidth = componentWidth;
       console.log("CHANGING GRAPHICS TO:", dotsCanvas.width, dotsCanvas.height);
