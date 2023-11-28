@@ -12,6 +12,7 @@ import {
   colorMainDark,
   colorMainDarkTransparent,
 } from "./Settings/mediHomeScssVariables";
+import { SVGShape } from "./Components/SVGAnimation";
 
 // Temp input props
 const menuElements = [
@@ -39,6 +40,8 @@ function App() {
         mainColor={"#ED306C"}
         backgroundColor={colorMainDark}
       />
+
+      <SVGShape />
 
       {/* <CircleHero
         selfRotating={false}

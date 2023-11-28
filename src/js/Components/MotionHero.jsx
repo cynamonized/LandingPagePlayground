@@ -8,6 +8,7 @@ import { useWindowSize } from "@uidotdev/usehooks";
 import particlesImage from "../../../images/Particles_cropped.jpg";
 import vehicle from "../p5/vehicle";
 import particles from "../p5/particles";
+import { useSpring, animated } from "@react-spring/web";
 
 export const Motionhero = ({
   menuList,
@@ -22,11 +23,23 @@ export const Motionhero = ({
   });
 
   const size = useWindowSize();
+  const [props, api] = useSpring(
+    () => ({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: { duration: 2000 },
+    }),
+    []
+  );
+  const componentHeight = 600;
 
   useEffect(() => {}, []);
 
   return (
-    <div className="nav-hero">
+    <animated.div
+      className="nav-hero"
+      style={{ height: `${componentHeight}px`, ...props }}
+    >
       <BasicNav
         menuList={menuList}
         firstName={firstName}
@@ -48,7 +61,7 @@ export const Motionhero = ({
       <ReactP5Wrapper
         sketch={particles}
         windowW={size.width}
-        windowH={600}
+        windowH={componentHeight}
         // background={backgroundColor}
         background={"#0d1522"}
         image={particlesImage}
@@ -58,6 +71,6 @@ export const Motionhero = ({
       {/* <p style={{ color: "white", padding: "150px", display: "block" }}>
         THESE ARE P5 COMPONENT PARAMS: {size.width}, {size.height}
       </p> */}
-    </div>
+    </animated.div>
   );
 };
