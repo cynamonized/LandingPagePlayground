@@ -98,16 +98,15 @@
       display: none;
     }
 
-    .container__menu-btn:checked ~ .container__right-column {
-      display: flex;
-      flex-basis: 100%;
-      // width: 100%;
-      // flex: 2 0 100%;
-      // flex-grow: 5;
+    @include tablet {
+      .container__menu-btn:checked ~ .container__right-column {
+        display: flex;
+        flex-basis: 100%;
 
-      .right-column__menu-list {
-        display: block;
-        margin-bottom: 20px;
+        .right-column__menu-list {
+          display: block;
+          margin-bottom: 20px;
+        }
       }
     }
 
