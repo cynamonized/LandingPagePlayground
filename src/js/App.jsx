@@ -43,7 +43,7 @@ function App() {
 
       <SVGShape />
 
-      {/* <CircleHero
+      <CircleHero
         selfRotating={false}
         firstName={"Circle"}
         secondName={"Testing"}
@@ -52,14 +52,14 @@ function App() {
         mainColor={"#ffc400"}
         title={"Lorem ipsum dolor amet"}
         subtitle={"Lorem ipsum placeholder dolor amet"}
-      /> */}
+      />
 
-      {/* <CircleAnimationBanner imagePath={"/images/Careers_middle_1.png"} /> */}
+      <CircleAnimationBanner imagePath={"/images/Careers_middle_1.png"} />
 
       {/* Without background it will still make circles */}
-      {/* <CircleAnimationBanner imagePath={"none"} /> */}
+      <CircleAnimationBanner imagePath={"none"} />
 
-      {/* <div
+      <div
         style={{
           marginBottom: "150px",
           display: "flex",
@@ -91,7 +91,7 @@ function App() {
           backgroundColor={"#0d1522"}
           blockColor={"#1b0d49"}
         />
-      </div> */}
+      </div>
     </>
   );
 }

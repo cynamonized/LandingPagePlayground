@@ -2,10 +2,6 @@ import "../../scss/main.scss";
 import "../../scss/Components/circleAnimationBanner.scss";
 import { useInView } from "react-intersection-observer";
 
-//
-// 2. ADD ANY CHILDREN HERE?
-//
-
 export const CircleAnimationBanner = ({ imagePath }) => {
   const { ref, inView, entry } = useInView({ threshold: 0.6 });
 
