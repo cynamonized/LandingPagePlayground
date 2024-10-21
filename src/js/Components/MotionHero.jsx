@@ -48,18 +48,18 @@ export const Motionhero = ({
       />
 
       {/* Vehicle */}
-      {/* <ReactP5Wrapper
-        sketch={vehicle}
+      <ReactP5Wrapper
+        sketch={particles}
         windowW={size.width}
         windowH={600}
         // background={backgroundColor}
         background={"#0d1522"}
         image={particlesImage}
-      /> */}
+      />
 
       {/* Particles */}
       <ReactP5Wrapper
-        sketch={particles}
+        sketch={vehicle}
         windowW={size.width}
         windowH={componentHeight}
         // background={backgroundColor}
